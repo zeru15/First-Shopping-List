@@ -17,8 +17,6 @@ export default function(state = initialState, action) {
             ...state
         }
         default: 
-        return {
-            state
-        }
+        return state;
     }
 }

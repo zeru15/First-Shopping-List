@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
 import ItemReducer from './ItemReducer';
 
-const rootReducer =  combineReducers({
+export default combineReducers({
     item: ItemReducer
-}
-)
-
-export default rootReducer;
+})
