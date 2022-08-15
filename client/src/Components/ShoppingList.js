@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../Actions/ItemActions';
 import PropTypes from 'prop-types';
@@ -21,8 +20,6 @@ class ShoppingList extends Component {
         return (
             <div>
                 <Container>
-                    
-
                     <ListGroup>
                         <TransitionGroup className = "shopping-list">
                             {items.map(({id, name}) => (
