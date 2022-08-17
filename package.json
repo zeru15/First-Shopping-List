@@ -4,11 +4,11 @@
   "description": "shopping list built with the mern stack",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix Client",
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix Client",
-    "dev": "concurrently \"npm run server\" \"npm run Client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "ZERUBABEL",
   "license": "MIT",
