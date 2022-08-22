@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const path = require('path')
 
-const items = require('./Routes/api/Items')
+
 
 const app = express();
 
@@ -15,12 +15,13 @@ const db = require('./Config/keys').mongoURI;
 
 // Connect to mongo
 mongoose
-   .connect(db)
+   .connect(db, {useNewUrlParser: true, useCreateIndex: true}) //Adding new mongo url parser
    .then(() => console.log('MongoDB Connected Successfully...'))
    .catch(err => console.log(err))
 
 //Use Routes
-app.use('/api/items', items)
+app.use('/api/items', require('./Routes/api/Items'))
+app.use('/api/users', require('./Routes/api/Users'))
 
 //Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
