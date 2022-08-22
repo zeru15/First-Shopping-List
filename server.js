@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
 const path = require('path')
 
 
@@ -8,14 +7,14 @@ const path = require('path')
 const app = express();
 
 // Bodyparser Middlewre
-app.use(bodyParser.json());
+app.use(express.json());
 
 // DB Config
 const db = require('./Config/keys').mongoURI;
 
 // Connect to mongo
 mongoose
-   .connect(db, {useNewUrlParser: true, useCreateIndex: true}) //Adding new mongo url parser
+   .connect(db, {useNewUrlParser: true}) //Adding new mongo url parser
    .then(() => console.log('MongoDB Connected Successfully...'))
    .catch(err => console.log(err))
 
