@@ -9,6 +9,7 @@ import {
   NavLink,
   Container
 } from 'reactstrap';
+import Logout from './Auth/Logout';
 import RegisterModal from './Auth/RegisterModal'
 
 
@@ -34,6 +35,9 @@ class AppNavbar extends Component {
               <Nav className="ms-auto" navbar>
                 <NavItem>
                   <RegisterModal />
+                </NavItem>
+                <NavItem>
+                  <Logout />
                 </NavItem>
               </Nav>
             </Collapse>
