@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 const config = require('config')
+require('dotenv').config();
 
 
 
@@ -11,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = config.get('mongoURI');
+const db = process.env.mongoURI;
 
 // Connect to mongo
 mongoose
